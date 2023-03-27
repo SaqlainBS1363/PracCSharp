@@ -22,7 +22,11 @@
             Console.WriteLine("String: " + num6);
             Console.WriteLine("Bool: " + num7);
 
-
+            checked
+            {
+                int val = int.MaxValue;
+                Console.WriteLine(val + 10);
+            }
         }
     }
 }
