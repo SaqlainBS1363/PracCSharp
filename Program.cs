@@ -23,13 +23,21 @@
             Console.WriteLine("Char: " + num5);
             Console.WriteLine("String: " + num6);
             Console.WriteLine("Bool: " + num7);
+            Console.WriteLine("\n\n");
+
 
             //3
-            checked
+            try
             {
-                int val = int.MaxValue;
-                //Console.WriteLine(val + 10);
+                checked
+                {
+                    int val = int.MaxValue;
+                    Console.WriteLine(val + 10);
+                }
+            }catch (OverflowException e) {
+                Console.WriteLine("Value overflowed");
             }
+            
 
             //4
             string str1 = "1000", str2 = "";
