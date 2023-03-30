@@ -1,6 +1,9 @@
-﻿namespace Task1
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Task1
 {
-    internal class Program
+    internal partial class Program
     {
         static void Main(string[] args)
         {
@@ -221,6 +224,11 @@
                     Console.WriteLine("Honourable Mention");
                     break;
             }
+
+            //12
+            Console.WriteLine("\n\n");
+            practiceCSharp S1 = new practiceCSharp("BS1363", "Md. Anwarul Habib");
+            S1.Introduce();
         }
     }
 }
