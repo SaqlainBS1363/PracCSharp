@@ -3,6 +3,17 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Task1
 {
+    public enum Days
+    {
+        Sunday,
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Jumwaday
+    }
     internal partial class Program
     {
         static void Main(string[] args)
@@ -198,6 +209,7 @@ namespace Task1
             }
             Console.WriteLine("\n\n");
 
+
             //11
             int position = 5;
             switch (position)
@@ -225,10 +237,12 @@ namespace Task1
                     break;
             }
 
+
             //12
             Console.WriteLine("\n\n");
             CSharpBasics S1 = new CSharpBasics("BS1363", "Md. Anwarul Habib");
             S1.Introduce();
+
 
             //13.
             Console.WriteLine("\n\n");
@@ -236,15 +250,120 @@ namespace Task1
             P1.Initialize("Saqlain", "BS1363");
             P1.Display();
 
+
             //14
             Console.WriteLine("\n\n");
             S1.Introduce();
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             CSharpBasics S2 = S1;
             S2.traineeName = "Saqlain";
             S1.Introduce();
 
+            Console.WriteLine("");
+            var x1 = 10;
+            var y1 = x1;
+            Console.WriteLine("1. X1 = " + x1 + ", Y1 = " + y1);
+            y1++;
+            Console.WriteLine("2. X1 = " + x1 + ", Y1 = " + y1);
 
+
+            //15
+            var intArray = new int[15];
+            var longArray = new long[15];
+            var doubleArray = new double[15];
+            var boolArray = new bool[15];
+            var charArray = new char[15];
+            var stringArray = new string[15];
+
+
+            //16
+            int intN = 1;
+            for(int j = 0; j < 15; j++, intN++)
+                intArray[j] = intN;
+
+            long longN = 1;
+            for(int j = 0; j < 15; j++, longN++)
+                longArray[j] = longN;
+
+            double doubleN = 1.0;
+            for (int j = 0; j < 15; j++, doubleN += 0.5)
+                doubleArray[j] = doubleN;
+
+            bool boolN = false;
+            for (int j = 0; j < 15; j++)
+            {
+                if (j % 2 == 0)
+                    boolN = true;
+                else
+                    boolN = false;
+                boolArray[j] = boolN;
+            }
+
+            char charN = 'a';
+            for (int j = 0; j < 15; j++, charN++)                
+                charArray[j] = charN;
+
+            string stringN = "a";
+            charN = 'a';
+            for (int j = 0; j < 15; j++, charN++)
+            {
+                stringArray[j] = stringN;
+                stringN += charN;
+            }
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("For loop: \n");
+            Console.WriteLine("Int\tLong\tDouble\tChar\tBool\tString\n");
+            for (i = 0; i < 15; i++)
+            {
+                if (i == 5)
+                    continue;
+                Console.Write(intArray[i] + "\t" + longArray[i] + "\t" + doubleArray[i] + "\t");
+                Console.Write(charArray[i] + "\t" + boolArray[i] + "\t" + stringArray[i]);
+                Console.WriteLine("");
+                if (i == 10)
+                    break;
+            }
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("While loop: \n");
+            Console.WriteLine("Int\tLong\tDouble\tChar\tBool\tString\n");
+            i = 1;
+            while (i < 15)
+            {
+                if (i == 5)
+                {
+                    i++;
+                    continue;
+                }
+                Console.Write(intArray[i] + "\t" + longArray[i] + "\t" + doubleArray[i] + "\t");
+                Console.Write(charArray[i] + "\t" + boolArray[i] + "\t" + stringArray[i]);
+                Console.WriteLine("");
+                if (i == 10)
+                    break;
+                i++;
+            }
+            Console.WriteLine("\n\n");
+
+            Console.WriteLine("Foreach loop: \n");
+            foreach (var x in intArray)
+            {
+                if (x == 5)
+                    continue;
+                Console.Write(x + " ");
+                if (x == 10)
+                    break;
+            }
+
+            //17
+            Console.WriteLine("\n\n");
+            Days days = Days.Sunday;
+            string dayName = Enum.GetName(days);
+            Console.WriteLine("The desired day: " + dayName);
+
+            string JumwaDay = "Friday";
+            days = (Days)Enum.Parse(typeof(Days), JumwaDay, true);
+            Console.WriteLine("Jumma day is: " + days);
         }
     }
 }
