@@ -227,8 +227,24 @@ namespace Task1
 
             //12
             Console.WriteLine("\n\n");
-            practiceCSharp S1 = new practiceCSharp("BS1363", "Md. Anwarul Habib");
+            CSharpBasics S1 = new CSharpBasics("BS1363", "Md. Anwarul Habib");
             S1.Introduce();
+
+            //13.
+            Console.WriteLine("\n\n");
+            Practice P1 = new Practice();
+            P1.Initialize("Saqlain", "BS1363");
+            P1.Display();
+
+            //14
+            Console.WriteLine("\n\n");
+            S1.Introduce();
+            Console.WriteLine("\n");
+            CSharpBasics S2 = S1;
+            S2.traineeName = "Saqlain";
+            S1.Introduce();
+
+
         }
     }
 }
