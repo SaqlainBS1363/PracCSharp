@@ -1,19 +1,10 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace Task1
 {
-    public enum Days
-    {
-        Sunday,
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Jumwaday
-    }
     internal partial class Program
     {
         static void Main(string[] args)
@@ -355,15 +346,136 @@ namespace Task1
                     break;
             }
 
+
             //17
             Console.WriteLine("\n\n");
             Days days = Days.Sunday;
-            string dayName = Enum.GetName(days);
+            var dayName = days;
             Console.WriteLine("The desired day: " + dayName);
 
             string JumwaDay = "Friday";
             days = (Days)Enum.Parse(typeof(Days), JumwaDay, true);
             Console.WriteLine("Jumma day is: " + days);
+
+
+            //18
+            Console.WriteLine("\n\n");
+
+            //Class1 c1 = new Class1("BS1");
+            Class2 c2 = new Class2("BS2");
+
+            Console.WriteLine();
+            Class1.work();
+            c2.work();
+
+
+            //19
+            Console.WriteLine("\n\n");
+            List<int> intList = new List<int>() { 3, 2, 1};
+            List<double> doubleList = new List<double>() { 3.554, 56.09189, 1.2};
+            List<string> stringList = new List<string>() { "CSE", "EEE", "IPE"};
+
+            intList.Add(4);
+            intList.AddRange(new List<int>(){ 5, 6});
+            intList.Sort();
+            intList.Remove(4);
+            intList.Insert(3, 12);
+
+            Console.Write("Int list: ");
+            for (i = 0; i < intList.Count; i++)
+                Console.Write(intList[i] + " ");
+            Console.WriteLine("");
+
+
+            //20.
+            Console.WriteLine("\n\n");
+            int[] intArray1 = new int[4];
+            double[] doubleArray1 = new double[4];
+            string[] stringArray1 = new string[4];
+
+
+            intN = 1;
+            for (int j = 0; j < 4; j++, intN++)
+                intArray1[j] = intN;
+
+            doubleN = 1.0;
+            for (int j = 0; j < 4; j++, doubleN += 0.5)
+                doubleArray1[j] = doubleN;
+
+            stringN = "a";
+            charN = 'a';
+            for (int j = 0; j < 4; j++, charN++)
+            {
+                stringArray1[j] = stringN;
+                stringN += charN;
+            }
+
+            Array.Sort(intArray1);
+            Array.Reverse(intArray1);
+            Array.Clear(intArray1);
+
+            Console.Write("Int array: ");
+            for (i = 0; i < intArray1.Length; i++)
+                Console.Write(intArray1[i] + " ");
+            Console.WriteLine("");
+
+
+            //21.
+            Console.WriteLine("\n\n");
+            var dateTime = new DateTime(2023, 4, 4);
+            var now = DateTime.Now;
+            var today = DateTime.Today;
+
+            Console.WriteLine("Current Date: ", now.Date);
+
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+
+            Console.WriteLine("Tomorrow: " + tomorrow.Date);
+            Console.WriteLine("Yesterday: " + yesterday.Date);
+
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortTimeString());
+
+
+            //22.
+            Console.WriteLine("\n\n");
+            str1 = "Brain Station 23 Ltd.";
+            str1.Replace('n', 'N');
+            str1.PadRight(2, ' ');
+            str1.Replace(' ', '~');
+            str1.Concat(" BS1363 ");
+            str1.Trim();
+            str1.ToUpperInvariant();
+            str1.ToLowerInvariant();
+            str1.Substring(0, 2);
+
+
+            //23.
+            Console.WriteLine("\n\n");
+            var strModification = new StringBuilder();
+
+            strModification.Append('~', 20)
+                .AppendLine()
+                .Append("CSE")
+                .AppendLine()
+                .Append('-', 20);
+
+            Console.WriteLine("Str Builder: \n" + strModification);
+
+            strModification.Replace('-', '*');
+            Console.WriteLine("Str Builder: \n" + strModification);
+
+            strModification.Remove(0, 5);
+            Console.WriteLine("Str Builder: \n" + strModification);
+
+            strModification.Insert(5, new string('^', 5));
+            Console.WriteLine("Str Builder: \n" + strModification);
+
+
+
         }
     }
 }
