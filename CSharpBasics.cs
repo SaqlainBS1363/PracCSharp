@@ -1,4 +1,4 @@
-﻿namespace Task1
+﻿namespace PracCSharp
 {
     internal partial class Program
     {
