@@ -9,6 +9,8 @@ namespace PracCSharp
     {
         static void Main(string[] args)
         {
+            // C# Basics: //
+
             //1
             Console.WriteLine("Hello, World!");
 
@@ -475,7 +477,9 @@ namespace PracCSharp
             Console.WriteLine("Str Builder: \n" + strModification);
 
 
-            Console.WriteLine("\nGood bye Saqlain\n");
+
+            // C# OOP: //
+
         }
     }
 }
