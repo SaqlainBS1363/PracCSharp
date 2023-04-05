@@ -428,7 +428,10 @@ namespace PracCSharp
             var now = DateTime.Now;
             var today = DateTime.Today;
 
-            Console.WriteLine("Current Date: ", now.Date);
+            Console.WriteLine("Current Date: " + now.Date);
+            Console.WriteLine("Todays Date: " + today.Date);
+            Console.WriteLine("Assignend Date: " + dateTime.Date);
+
 
             var tomorrow = now.AddDays(1);
             var yesterday = now.AddDays(-1);
@@ -445,14 +448,14 @@ namespace PracCSharp
             //22.
             Console.WriteLine("\n\n");
             str1 = "Brain Station 23 Ltd.";
-            str1.Replace('n', 'N');
-            str1.PadRight(2, ' ');
-            str1.Replace(' ', '~');
-            str1.Concat(" BS1363 ");
-            str1.Trim();
-            str1.ToUpperInvariant();
-            str1.ToLowerInvariant();
-            str1.Substring(0, 2);
+            Console.WriteLine(str1.Replace('n', 'N'));
+            Console.WriteLine(str1.PadRight(2, ' '));
+            Console.WriteLine(str1.Replace(' ', '~'));
+            Console.WriteLine(str1.Concat(" BS1363 "));
+            Console.WriteLine(str1.Trim());
+            Console.WriteLine(str1.ToUpperInvariant());
+            Console.WriteLine(str1.ToLowerInvariant());
+            Console.WriteLine(str1.Substring(0, 2));
 
 
             //23.
@@ -480,8 +483,21 @@ namespace PracCSharp
 
             // C# OOP: //
 
-            //1. 
+            Console.WriteLine("\n\n");
+            // Upcasting
+            var student1 = new Student("Saqlain", "abc@gmail.com", 25, "CSE");
+            User firstUser = student1;
+            firstUser.WelcomeUser();
+            student1.IntroductionStudent();
+            //student1.IntroductionStudent("Algorithms");
 
+            // Downcasting
+            User secondUser = new Teacher("John Doe", "jd@gmail.com", 45, 15);
+            Teacher teacher1 = (Teacher)secondUser;
+            teacher1.Rules();
+            teacher1.WelcomeUser();
+            teacher1.IntroductionTeacher();
+            //teacher1.IntroductionTeacher("OOP");
         }
     }
 }
