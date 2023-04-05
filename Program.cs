@@ -480,6 +480,8 @@ namespace PracCSharp
 
             // C# OOP: //
 
+            //1. 
+
         }
     }
 }
