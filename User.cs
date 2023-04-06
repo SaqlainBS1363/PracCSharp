@@ -32,8 +32,9 @@ namespace PracCSharp
 
         public void Rules()
         {
+            Console.WriteLine("");
             Console.WriteLine("Rules and regulations of 2023");
-            Console.WriteLine("\n\n");
+            Console.WriteLine("");
         }
 
         public virtual void WelcomeUser()

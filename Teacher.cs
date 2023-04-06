@@ -19,14 +19,14 @@ namespace PracCSharp
         public override void WelcomeUser()
         {
             Console.WriteLine("Welcome Mr. " + this.Name + " as a Teacher");
-            Console.WriteLine("\n\n");
+            Console.WriteLine("");
         }
 
         public void IntroductionTeacher()
         {
             Console.WriteLine("Hello! " + "I am " + this.Name + ", a Teacher.");
             Console.WriteLine("I have " + this.YearsOfExp + " of experience.");
-            Console.WriteLine("\n\n");
+            Console.WriteLine("");
         }
 
         public void IntroductionTeacher(string course)
@@ -34,7 +34,7 @@ namespace PracCSharp
             Console.WriteLine("Hello! " + "I am " + this.Name + ", a Teacher.");
             Console.WriteLine("I have " + this.YearsOfExp + " of experience.");
             Console.WriteLine("I will teach " + course);
-            Console.WriteLine("\n\n");
+            Console.WriteLine("");
         }
     }
 }
