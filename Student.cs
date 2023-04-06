@@ -18,7 +18,7 @@ namespace PracCSharp
 
         public override void WelcomeUser()
         {
-            Console.WriteLine("Welcome Mr. " + this.Name + " as a Student");
+            Console.WriteLine("Welcome Mr. " +  + " as a Student");
             Console.WriteLine("\n\n");
         }
 
